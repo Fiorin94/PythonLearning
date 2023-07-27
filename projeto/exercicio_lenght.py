@@ -8,7 +8,7 @@ if tamanho >= 1:
     elif tamanho >= 5 and tamanho <= 6:
         print('Seu nome é normal')
     elif tamanho >= 7:
-        rint('Seu nome é grande')
+        print('Seu nome é grande')
     else:
         print('Digite um nome válido')
 else:
