@@ -23,8 +23,22 @@ contrário disso:
 
 O primeiro dígito do CPF é 7
 """
+import re
+import sys
 
-cpf = '39823661863'
+entrada = input('CPF [398.236.618-63]: ')
+cpf = re.sub(
+    r'[^0-9]',
+    '',
+    entrada
+)
+
+entrada_e_sequencial = entrada == entrada[0] * len(entrada)
+
+if entrada_e_sequencial:
+    print('Você enviou dados sequenciais.')
+    sys.exit()
+
 cpf_range = cpf[0:9]
 contador = 10
 resultado_1 = 0
@@ -53,5 +67,3 @@ if cpf == cpf_gerado:
     print(f'O CPF {cpf} é válido.')
 else:
     print(f'O CPF {cpf} é inválido.')
-
-
